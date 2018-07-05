@@ -1,0 +1,10 @@
+marble diagrams + stream
+
+(-) time
+(e) event
+(X) error
+(|) end
+
+----e----e----X
+
+----e----e-------|
