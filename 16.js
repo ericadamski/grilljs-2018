@@ -1,24 +1,17 @@
-const compose = require("./sol.13.js");
-
-// pure function composition!
-function appendExclamation(str) {
-  return `${str}!`;
+// pure
+function addOne(value) {
+  return value + 1;
 }
 
-function addOne(i) {
-  return i + 1;
+// Not pure
+function addOneOrTwo(value) {
+  return value + (Math.round(Math.random() * 100) % 3 ? 1 : 2);
 }
-
-function toString(v) {
-  return `${v}`;
-}
-
-const addExcitment = compose(
-  appendExclamation,
-  toString,
-  addOne
-);
 
 console.clear();
-// Will always give same result!
-console.log(addExcitment(1), addExcitment(1), addExcitment(1), addExcitment(1));
+
+// This would always be 2!
+console.log(addOne(1), addOne(1), addOne(1), addOne(1));
+
+// This won't always be 2!
+console.log(addOneOrTwo(1), addOneOrTwo(1), addOneOrTwo(1), addOneOrTwo(1));
