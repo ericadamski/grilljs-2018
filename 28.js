@@ -1,13 +1,25 @@
-const { of, empty } = require("rxjs");
+const { of, interval } = require("rxjs");
 
-// empty
-[];
-empty();
+const list = [1, 2, 3, 4];
 
-// null or undefined
-[null] /* or */ [undefined];
-of(null) /* or */ of(undefined);
+// Observable
+const observable = of(1, 2, 3, 4);
 
-// primatives-ish
-[1, 'string', [], {}]
-of(1, 'string', [], {})
+console.log(list.map(i => i + 1).join("\n"));
+
+console.log("===");
+
+observable.subscribe({
+  next(i) {
+    console.log(i + 1);
+  }
+});
+
+console.log("===");
+console.log("🔥 interval");
+
+interval(1000).subscribe({
+  next(s) {
+    console.log(`${s + 1} seconds have passed.`);
+  }
+});

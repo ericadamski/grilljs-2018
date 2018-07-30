@@ -1,27 +1,25 @@
-const { range, interval } = require("rxjs");
-const { map, concatMap } = require("rxjs/operators");
+const { of } = require("rxjs");
+const { map, filter, reduce } = require("rxjs/operators");
 
-function makeRandomPromise(v) {
-  function randomInteger(m) {
-    return Math.round(Math.random() * m);
-  }
+const list = [1, 2, 3, 4];
 
-  return function() {
-    return new Promise(resolve => {
-      const interval = Math.max(500, randomInteger(5000));
-      console.log(`Waiting ${interval} for ${v}`);
-      setTimeout(() => resolve(v), interval);
-    });
-  };
-}
+console.log(
+  list
+    .map(i => i + 1)
+    .filter(i => i % 2)
+    .reduce((sum, v) => sum + v, 0)
+);
 
-range(1, 10)
+console.log("===");
+
+of(1, 2, 3, 4)
   .pipe(
-    map(value => makeRandomPromise(value)),
-    concatMap(fn => fn())
+    map(i => i + 1),
+    filter(i => i % 2),
+    reduce((sum, v) => sum + v, 0)
   )
   .subscribe({
     next(v) {
-      console.log("Got", v);
+      console.log(v);
     }
   });
