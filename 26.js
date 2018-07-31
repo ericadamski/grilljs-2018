@@ -1,10 +1,8 @@
-// Intro to RxJS - Observables <-> hot 🔥
-const { interval } = require("rxjs");
+// Intro to RxJS - Observables <-> cold ❄️
+const { of } = require("rxjs");
 
-// No JS equivilent...
+// List
+const list = [1, 2, 3, 4, 5];
 
 // Observable
-const observable = interval(1000);
-// we can monitor more that just time.
-
-// --e--e--e--e--e--e--e- ...
+const observable = of(1, 2, 3, 4, 5);

@@ -2,6 +2,8 @@ const db = require("./src/db.js");
 const { decode } = require("./src/sanitize.js");
 const getLocation = require("./src/get-location.js");
 
+// Being used like so...
+
 class UserController {
   // Typical ExpressJS route handler
   static index(request) {
