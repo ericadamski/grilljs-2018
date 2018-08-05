@@ -1,0 +1,149 @@
+import { Link } from './src/components/link.styled';
+
+>>>> Hello
+
+---
+
+<img src="./2.png" />
+
+---
+* Twitter <Link href="https://twitter.com/zealigan">@zealigan</Link>
+* Github <Link href="https://github.com/ericadamski">@ericadamski</Link>
+
+>> Talk to me!
+---
+
+>>> Large code bases spread over large teams
+
+---
+
+>>> This is complex!
+
+Get ready to read some code. <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/5.js" file="5.js" />
+
+```notes
+I really wanted to give this talk entierly in VSCode. Instead I will give it mostly in VSCode 🤣
+```
+
+---
+
+>>> Controllers
+
+Where I work we had controllers that looked something like this: <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/6.js" />
+
+---
+
+>>> This gave us scattered logic required high mental load
+
+```notes
+talk here about things like:
+
+* on boarding
+* bug fixing
+* testing
+```
+
+---
+
+>> How do we do better?
+
+* Write more declarative code.
+
+```notes
+A lot of our code exists as Obscure, implicit patterns that can only scale as fast as knowledge scales
+```
+
+---
+>> 🗺
+
+* **Fun**-ctional programming principles in JavaScript
+* Introduction to RxJS
+* Declarative RxJS Controllers
+
+---
+
+> What do we want end up with? <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/9.js" file="9.js"/>
+
+---
+> Functional Programming Principles
+
+* Basics
+* Pureness
+* Composability
+---
+> Basics
+
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/13.js" file="13.js"/>
+---
+> Pureness
+
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/18.js" file="18.js"/>
+---
+> Composability
+
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/16.js" file="16.js"/>
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/19.js" file="19.js"/>
+---
+>> But, Composability only works if programmers get good at naming 🙄
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/21.js" file="21.js"/>
+---
+> A good compose is about giving the reader of your story the understanding of each chapter.
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/23.js" file="23.js"/>
+---
+>> Not bad!
+>>> Was it worth it? 🤔
+
+```notes
+if we all wrote code like that our "junior devs" would have a much lower barrier to entry and more senior devs would require less brain capacity to debug and fix complex issues!
+```
+---
+>>> I think so.
+>>> Let's take it one step further
+---
+>>>> RxJS
+
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/26.js" file="26.js">❄️</Link>
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/27.js" file="27.js">🔥</Link>
+---
+# Marble Diagrams
+
+Another way to reason about Observables
+
+> (-) time
+> (e) event
+> (X) error
+> (|) end
+
+## ----e----e-------X
+## ----e----e-------|
+---
+>> Comparing Observables to Lists 
+
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/29.js" file="29.js"/>
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/30.js" file="30.js"/>
+---
+>> RxJS uses `pipe` by default!
+
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/32.js" file="32.js"/>
+---
+>> RxJS has ~100 pure functions for us to use!
+
+### <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/34.js" file="34.js"/>
+---
+>> What makes any of this useful?
+
+* Every as Lists! - Even Async <Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/35.js" file="35.js"/>
+---
+>>>> Why 😕
+
+```notes
+these are all semantic, you will understand them with time and knowledge
+```
+---
+>> But how do we achive the goal of making our code declarative?
+
+> Composing our own operations!
+
+<Link href="vscode:///Users/Sgt-Wikkidoo/github/rxjs6-controllers/38.js" file="38.js"/>
+---
+# Thank you 🙇‍♂️
