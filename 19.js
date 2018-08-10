@@ -1,4 +1,8 @@
-const compose = require("./sol.13.js");
+function pipe(...fns) {
+  return function(initialValue) {
+    return fns.reduce((value, fn) => fn(value), initialValue);
+  };
+}
 
 // pure function composition!
 function appendExclamation(str) {
@@ -13,10 +17,12 @@ function toString(v) {
   return `${v}`;
 }
 
-const addExcitment = compose(
-  appendExclamation,
+// add one and make string
+
+const addExcitment = pipe(
+  addOne,
   toString,
-  addOne
+  appendExclamation
 );
 
 console.clear();

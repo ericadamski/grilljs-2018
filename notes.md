@@ -1,0 +1,2 @@
+- remove compose -> go straight to pipe.
+- add some comic-relief

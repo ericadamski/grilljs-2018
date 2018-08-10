@@ -1,12 +1,17 @@
 const db = require("./src/db.js");
 const { decode } = require("./src/sanitize.js");
 const getLocation = require("./src/get-location.js");
-const compose = require("./sol.13.js");
 
-const prepareUser = compose(
-  attachLocation,
+function pipe(...fns) {
+  return function(initialValue) {
+    return fns.reduce((value, fn) => fn(value), initialValue);
+  };
+}
+
+const prepareUser = pipe(
+  decodeAllStrings,
   computePopularity,
-  decodeAllStrings
+  attachLocation
 );
 
 class UserController {

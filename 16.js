@@ -1,7 +1,8 @@
-// f(g(x))
-module.exports = function compose(...fns) {
-  // TODO: write this
-};
+function pipe(...fns) {
+  return function(initialValue) {
+    return fns.reduce((value, fn) => fn(value), initialValue);
+  };
+}
 
 function split(str) {
   return str.split("");
@@ -18,9 +19,9 @@ function joinWithExclamations(arr) {
 }
 
 console.log(
-  compose(
-    joinWithExclamations,
+  pipe(
+    split,
     capitalize,
-    split
+    joinWithExclamations
   )("hello griljs")
 );

@@ -1,4 +1,8 @@
-const compose = require("./sol.13.js");
+function pipe(...fns) {
+  return function(initialValue) {
+    return fns.reduce((value, fn) => fn(value), initialValue);
+  };
+}
 
 // pure function composition!
 function a(str) {
@@ -13,10 +17,10 @@ function c(v) {
   return `${v}`;
 }
 
-const d = compose(
-  a,
+const d = pipe(
+  b,
   c,
-  b
+  a
 );
 
 console.clear();
