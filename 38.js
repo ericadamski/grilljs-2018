@@ -5,7 +5,6 @@ const { decode } = require("./src/sanitize.js");
 const getLocation = require("./src/get-location.js");
 
 class UserController {
-  // Typical ExpressJS route handler
   static index(request) {
     console.time("index");
     return from(db.User.find()).pipe(
